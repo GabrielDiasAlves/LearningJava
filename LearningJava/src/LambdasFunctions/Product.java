@@ -12,4 +12,9 @@ public class Product extends Object {
 		this.discount = discount;
 	}
 	
+	public String toString() {
+		double finalPrice = price * (1 - discount);
+		return name + " cost: $" + finalPrice;
+	}
+	
 }
