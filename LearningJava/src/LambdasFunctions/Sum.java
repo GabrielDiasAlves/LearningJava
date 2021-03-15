@@ -1,8 +1,4 @@
-/**
- * 
- */
 package LambdasFunctions;
-
 
 public class Sum implements Calc{
 
