@@ -13,7 +13,7 @@ public class CompositionPredicateFunction {
 		
 		System.out.println(isEven.or(isThreeDigitos).test(331));
 		
-		//In this case, it was possible use two checks, "isEven" and "isThreeDigitos", because it's "Boolean"
+		//In this case, it was possible use two checks, "isEven" and "isThreeDigitos", because it's "Boolean" 
 		
 	}
 
