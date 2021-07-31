@@ -18,6 +18,5 @@ public class TestCalc03 {
 		//Example with Integer
 		BinaryOperator<Integer> calc06 = (x, y) -> { return x + y; };
 		System.out.println(calc06.apply(5, 5));
-
 	}
 }
