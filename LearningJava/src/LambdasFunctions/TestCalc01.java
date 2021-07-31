@@ -9,7 +9,7 @@ public class TestCalc01 {
 		
 		calc = new Multiply();
 		System.out.println(calc.execute(5, 7));
-		
+	
 	}
 
 }
