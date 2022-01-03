@@ -2,11 +2,12 @@ package streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class Reduce02 {
+public class Reduce03 {
 
 	public static void main(String[] args) {
 
@@ -19,12 +20,15 @@ public class Reduce02 {
 
 		Predicate<Student> approved = a -> a.grade >= 7;
 		Function<Student, Double> getGrade = a -> a.grade;
-		BinaryOperator<Double> sumGrade = (a, b) -> a + b;
+		BiFunction<Average, Double, Average> calculateAverage = (average, grade) -> average.add(grade);
+		BinaryOperator<Average> combineAverage = (m1, m2) -> Average.combine(m1, m2);
+		
+		Average average = students.parallelStream()
+			      .filter(approved)
+			      .map(getGrade)
+			      .reduce(new Average(), calculateAverage, combineAverage);
 
-		students.parallelStream()
-		        .filter(approved)
-		        .map(getGrade)
-		        .reduce(sumGrade)
-		        .ifPresent(System.out::println);
+		System.out.println("The class average is: " + average.getValue());
+
 	}
 }
