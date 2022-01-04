@@ -11,4 +11,8 @@ public class Student {
 		this.name = name;
 		this.grade = grade;
 	}
+	
+	public String toString() {
+		return name + " have the grade " + grade;
+	}
 }
