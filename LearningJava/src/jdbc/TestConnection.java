@@ -18,6 +18,6 @@ public class TestConnection {
 		Connection connection = DriverManager.getConnection(url, user, pass);
 		
 		System.out.println("Connection to the Database was successful");
-		connection.close();
+		connection.close(); 
 	} 
 }
