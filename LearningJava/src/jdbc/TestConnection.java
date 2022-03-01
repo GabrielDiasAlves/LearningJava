@@ -12,8 +12,8 @@ public class TestConnection {
 
 		final String url = "jdbc:mysql://localhost:3307/test_db?useSSL=false"; 
 			//"JavaDataBaseConnection:TypeDataBase:IPServer:Port/DataBaseName?useSSl=true/false" - In this case, i use localhost, and isn't necessary
-		final String user = "root"; 	//Your DB user
-		final String pass = "Siscobr4"; //Password
+		final String user = "admin"; 	//Your DB user
+		final String pass = "test"; //Password
 
 		Connection connection = DriverManager.getConnection(url, user, pass);
 		
