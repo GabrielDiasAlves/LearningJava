@@ -13,18 +13,19 @@ public class NewPeople {
 
 		System.out.print("Enter your name: ");
 		String name = in.nextLine();
-		
+
 		// Don't use insertion in this way, to avoid SQL Injection attacks
-		// String sql = "INSERT INTO people (name) VALUES('" + name + "')"; 
-		
+		// String sql = "INSERT INTO people (name) VALUES('" + name + "')";
+
 		String sql = "INSERT INTO people (name) VALUES(?)";
-		
+
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		stmt.setString(1, name);
 		stmt.execute();
-		
+
 		System.out.println("The data was inserted with successful");
-		
+
 		in.close();
 	}
+
 }
